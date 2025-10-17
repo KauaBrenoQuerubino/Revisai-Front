@@ -1,0 +1,13 @@
+<section>
+    <h1>Cadastro</h1>
+    <p>Já tem conta? <a href="">Fazer login </a></p>
+    <div class="container">
+        <form (ngSubmit)="Cadastrar()">
+            <input type="text" [(ngModel)]="usuario.nome" name="nome">
+            <input type="email" [(ngModel)]="usuario.email" name="email">
+            <input type="password" [(ngModel)]="usuario.senha" name="senha">
+            <input type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</section>
