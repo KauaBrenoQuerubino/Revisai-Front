@@ -17,7 +17,7 @@ export class AuthService {
 
 
   cadastro(User: User): Observable<any> {
-    return this.http.post(`${this.url}/cadastro`, { User }).pipe(
+    return this.http.post(`${this.url}/cadastro`,  User ).pipe(
       tap((response: any) => {
         console.log(response);
       })
