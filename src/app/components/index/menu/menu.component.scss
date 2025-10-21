@@ -1,0 +1,26 @@
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    .container{
+        background-color: red;
+        width: 100%;
+        padding: 20px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            li {
+                text-decoration: none;
+                list-style: none;
+            }
+        }
+    }
+}
