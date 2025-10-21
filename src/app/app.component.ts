@@ -4,10 +4,11 @@ import { CadastroComponent } from "./components/cadastro/cadastro.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ColecaoComponent } from "./components/decks/colecao/colecao.component";
 import { DecksComponent } from "./components/decks/decks.component";
+import { IndexComponent } from "./components/index/index.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CadastroComponent, LoginComponent, ColecaoComponent, DecksComponent],
+  imports: [RouterOutlet, CadastroComponent, LoginComponent, ColecaoComponent, DecksComponent, IndexComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

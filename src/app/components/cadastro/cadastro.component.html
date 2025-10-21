@@ -7,13 +7,13 @@
         <p>Já tem conta? <a href="">Fazer login </a></p>
         <form (ngSubmit)="Cadastrar()">
             <label for="nome">Nome:</label>
-            <input type="text" [(ngModel)]="usuario.nome" name="nome">
+            <input type="text" [(ngModel)]="usuario.nome" name="nome" placeholder="Digite seu nome">
             <label for="Email">Email:</label>
-            <input type="email" [(ngModel)]="usuario.email" name="email">
+            <input type="email" [(ngModel)]="usuario.email" name="email" placeholder="Digite seu email">
             <label for="Senha">Senha:</label>
-            <input type="password" [(ngModel)]="usuario.senha" name="senha">
+            <input type="password" [(ngModel)]="usuario.senha" name="senha" placeholder="Digite sua senha">
             <label for="passwordConfirm">Confirmar senha:</label>
-            <input type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm">
+            <input type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm" placeholder="Confirme sua senha">
             <button type="submit">Cadastrar</button>
         </form>
     </div>
