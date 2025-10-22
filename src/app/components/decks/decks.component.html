@@ -1,14 +1,16 @@
 
+<section>
 
-@for (item of Teste; track item.id) {
-  <p>{{ item.nome }}</p>
+  <img src="imgs/img1.webp" alt="">
+  
+  @for (item of Teste; track item.id) {
+    <p>{{ item.nome }}</p>
+    <ul>
+  
+      {{item.flashcards.length}}
+      
+    </ul>
+  }
 
-
-
-  <ul>
-
-    {{item.flashcards.length}}
-    
-  </ul>
-}
+</section>
 
