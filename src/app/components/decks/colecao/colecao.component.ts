@@ -31,9 +31,7 @@ export class ColecaoComponent {
 
   colecaoModel: Colecao = {
     nome: '',
-    usuario: {
-      id: 1
-    }
+    usuarios: [{ id: 1 }]
   }
 
   CriarColecao(): void {

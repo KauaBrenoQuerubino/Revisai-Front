@@ -1,16 +1,33 @@
+@for (item of Teste; track item.id) {
+  <section>
 
-<section>
-
-  <img src="imgs/img1.webp" alt="">
-  
-  @for (item of Teste; track item.id) {
-    <p>{{ item.nome }}</p>
-    <ul>
-  
-      {{item.flashcards.length}}
+    <img src="imgs/img1.webp" alt="">
+    
+      <div class="text">
+        <p>{{ item.nome }}</p>
+        <ul>
       
-    </ul>
-  }
+          <p>Total:{{item.flashcards.length}}</p>
+          
+        </ul>
+        
+      </div>
 
-</section>
+      <div class="botao">
+        <button>
+          <i class="bi bi-plus-lg"></i>
+        </button>
+        <button>
+          <i class="bi bi-pencil-square"></i>
+        </button>
+        <button>
+          <i class="bi bi-play-fill"></i>
+        </button>
+      </div>
+  
+  </section>
+}
+
+
+<app-colecao />
 

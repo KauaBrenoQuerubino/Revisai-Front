@@ -1,6 +1,4 @@
 export interface Colecao {
-    "nome": String,
-    "usuario": {
-        "id": number
-    }
+  nome: string;
+  usuarios: { id: number }[];
 }

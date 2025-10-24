@@ -3,10 +3,11 @@ import { FlashcardComponent } from "./flashcard/flashcard.component";
 import { ColecaoComponent } from "./colecao/colecao.component";
 import { HttpClient } from '@angular/common/http';
 import { ColecaoService } from '../../service/flashcards/colecao/colecao.service';
+import { CadastroComponent } from "../cadastro/cadastro.component";
 
 @Component({
   selector: 'app-decks',
-  imports: [FlashcardComponent, ColecaoComponent],
+  imports: [FlashcardComponent, ColecaoComponent, CadastroComponent],
   templateUrl: './decks.component.html',
   styleUrl: './decks.component.scss'
 })
