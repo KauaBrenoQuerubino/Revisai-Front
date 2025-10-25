@@ -1,0 +1,9 @@
+<section>
+    <div class="container">
+        <h1>Criar Coleção</h1>
+        <form (ngSubmit)="CriarColecao()">
+            <input type="text" [(ngModel)]="colecaoModel.nome" name="nome" placeholder="Nome da">
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+</section>

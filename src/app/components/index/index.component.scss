@@ -47,7 +47,13 @@ section {
 
 
     .decks {
-    
-        margin: 20px 0 120px 0 ;
+        
+        width: 85%;
+        min-height: 100%;
+        margin: 20px 0 300px 0 ;
+
+        h3 {
+            color: var(--secundary);
+        }
     }
 }

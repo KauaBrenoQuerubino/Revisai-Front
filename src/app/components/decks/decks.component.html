@@ -1,31 +1,35 @@
-@for (item of Teste; track item.id) {
-  <section>
-
-    <img src="imgs/img1.webp" alt="">
-    
-      <div class="text">
-        <p>{{ item.nome }}</p>
-        <ul>
-      
-          <p>Total:{{item.flashcards.length}}</p>
-          
-        </ul>
-        
-      </div>
-
-      <div class="botao">
-        <button>
-          <i class="bi bi-plus-lg"></i>
-        </button>
-        <button>
-          <i class="bi bi-pencil-square"></i>
-        </button>
-        <button>
-          <i class="bi bi-play-fill"></i>
-        </button>
-      </div>
+@for (item of deck; track item.id) {
+  @if (deck.length == 0) {
+    <h1>Nenhum deck cadastrado</h1>
+  }@else {
+    <section>
   
-  </section>
+      <img src="imgs/img1.webp" alt="">
+      
+        <div class="text">
+          <p>{{ item.nome }}</p>
+          <ul>
+        
+            <p>Total:{{item.flashcards.length}}</p>
+            
+          </ul>
+          
+        </div>
+  
+        <div class="botao">
+          <button (click)="openDialog()">
+            <i class="bi bi-plus-lg"></i>
+          </button>
+          <button>
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button>
+            <i class="bi bi-play-fill"></i>
+          </button>
+        </div>
+    
+    </section>
+  }
 }
 
 
