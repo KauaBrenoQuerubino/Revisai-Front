@@ -1,0 +1,64 @@
+.flashcard-container {
+  text-align: center;
+  padding: 20px;
+  perspective: 1200px; /* essencial para ver o 3D */
+
+  .card-wrapper {
+    display: inline-block;
+    width: 340px;
+    height: 220px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* essencial */
+    transition: transform 0.6s cubic-bezier(.4, .2, .2, 1);
+    will-change: transform;
+  }
+
+  /* quando a classe for aplicada, gira 180deg no eixo Y */
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;            /* importante */
+    -webkit-backface-visibility: hidden;    /* safari */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .card-front {
+    background: linear-gradient(135deg, #007bff 0%, #4a90e2 100%);
+    color: #fff;
+  }
+
+  .card-back {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg); /* mostra o verso quando o pai girar */
+  }
+
+  .controls {
+    margin-top: 16px;
+    button {
+      margin: 0 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

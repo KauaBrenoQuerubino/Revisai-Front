@@ -2,12 +2,6 @@
     <div class="container">
         <h1>Criar Flashcard</h1>
         <form (ngSubmit)="criarFlashcard()">
-            
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Nome do flashcard" [(ngModel)]="flashcardModel.nome" required>
-
-            <label for="tema">Tema:</label>
-            <input type="text" id="tema" name="tema" placeholder="Tema do flashcard" [(ngModel)]="flashcardModel.tema" required>
 
             <label for="enunciado">Enunciado:</label>
             <textarea id="enunciado" name="enunciado" placeholder="Digite o enunciado (pergunta)" [(ngModel)]="flashcardModel.enunciado" required></textarea>
@@ -21,3 +15,4 @@
         </form>
     </div>
 </section>
+

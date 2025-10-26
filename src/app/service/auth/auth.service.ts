@@ -16,6 +16,8 @@ export class AuthService {
   private tokenKey = 'auth_token';
 
 
+
+
   cadastro(User: User): Observable<any> {
     return this.http.post(`${this.url}/cadastro`,  User ).pipe(
       tap((response: any) => {
@@ -32,6 +34,11 @@ export class AuthService {
         }
       })
     );
+  }
+
+  sessao(): Observable<any> {
+    const token = localStorage.getItem(this.tokenKey)
+    return this.http.post(`${this.url}/sessao`, {token}).pipe()
   }
 
 }

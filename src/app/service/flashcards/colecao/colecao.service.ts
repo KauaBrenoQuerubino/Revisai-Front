@@ -12,7 +12,7 @@ export class ColecaoService {
 
   private url = 'http://localhost:8080/Colecao';
 
-  criarColecao(colecao: Colecao): Observable<any> {
+  criarColecao(colecao?: Colecao): Observable<any> {
     return this.http.post(`${this.url}`,  colecao ).pipe(
       tap((response: any) => {
         console.log(response);
@@ -21,6 +21,14 @@ export class ColecaoService {
   }
 
   procurarUsuario(id: number): Observable<any> {
+    return this.http.get(`${this.url}/user/${id}`).pipe(
+      tap((response: any) => {
+        console.log(response);
+      })
+    );
+  }
+
+  procurarColecao(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`).pipe(
       tap((response: any) => {
         console.log(response);

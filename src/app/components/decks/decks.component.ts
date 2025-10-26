@@ -7,6 +7,7 @@ import { CadastroComponent } from "../cadastro/cadastro.component";
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContentColecaoComponent } from './colecao/dialog-content-colecao/dialog-content-colecao.component';
 import { DialogContentFlashcardComponent } from './flashcard/dialog-content-flashcard/dialog-content-flashcard.component';
+import { AuthService } from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-decks',
@@ -19,24 +20,48 @@ export class DecksComponent {
   constructor(private http: HttpClient) {}
 
   #colecaoService = inject(ColecaoService);
+  
+  #AuthService = inject(AuthService)
 
   deck: any[] = [];
 
+  UserId?: number;
+
   ngOnInit() {
-    this.#colecaoService.procurarUsuario(1).subscribe({
-      next: (colecao) => {
-        this.deck = colecao
-        console.log(colecao)
+    this.#AuthService.sessao().subscribe({
+      next: (user) => {
+        this.UserId = user.id;
+
+        // Agora que temos o ID, chamamos o serviço
+        this.carregarDecks(user.id);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar sessão:', err);
       }
-    })
+    });
+  }
+
+  carregarDecks(id: number) {
+    this.#colecaoService.procurarUsuario(id).subscribe({
+      next: (colecao) => {
+        this.deck = colecao;
+        console.log('Coleções carregadas:', colecao);
+      },
+      error: (err) => {
+        console.error('Erro ao carregar coleções:', err);
+      }
+    });
   }
   
   readonly dialog = inject(MatDialog);
 
-  openDialog() {
+  openDialog(item: any) {
     const dialogRef = this.dialog.open(DialogContentFlashcardComponent, {
-      height: '300px',
+      height: '400px',
       width: '600px',
+      data: {
+        colecao: item
+      },
     });
 
     dialogRef.afterClosed().subscribe(result => {
