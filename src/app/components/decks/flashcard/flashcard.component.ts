@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ColecaoService } from '../../../service/flashcards/colecao/colecao.service';
 import { flashcard } from '../../../Model/flashcard/Flashcard.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-flashcard',
@@ -13,12 +14,20 @@ import { flashcard } from '../../../Model/flashcard/Flashcard.model';
 export class FlashcardComponent {
   #colecaoService = inject(ColecaoService);
 
+  constructor(private route: ActivatedRoute) {}
+
   flashcards: flashcard[] = [];
   currentIndex = 0;
   showAnswer = false;
   ColecaoID = 1;
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const idString = params.get('id');
+      this.ColecaoID = idString ? +idString : 0; // '+' converte string para number
+      console.log(this.ColecaoID);
+  });
+
     this.#colecaoService.procurarColecao(this.ColecaoID).subscribe({
       next: (response) => {
         this.flashcards = response.flashcards ?? [];

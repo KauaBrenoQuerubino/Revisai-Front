@@ -6,6 +6,7 @@ import { DialogContentColecaoComponent } from '../decks/colecao/dialog-content-c
 import { DialogContentFlashcardComponent } from '../decks/flashcard/dialog-content-flashcard/dialog-content-flashcard.component';
 import { AuthService } from '../../service/auth/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',

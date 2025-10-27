@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogContentColecaoComponent } from './colecao/dialog-content-colecao/dialog-content-colecao.component';
 import { DialogContentFlashcardComponent } from './flashcard/dialog-content-flashcard/dialog-content-flashcard.component';
 import { AuthService } from '../../service/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-decks',
@@ -17,7 +18,7 @@ import { AuthService } from '../../service/auth/auth.service';
 })
 export class DecksComponent {
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   #colecaoService = inject(ColecaoService);
   
@@ -39,6 +40,10 @@ export class DecksComponent {
         console.error('Erro ao buscar sessão:', err);
       }
     });
+  }
+
+  irParaFlashCards(id: number) {
+    this.router.navigate(['/flashcard', id]); // rota com parâmetro
   }
 
   carregarDecks(id: number) {

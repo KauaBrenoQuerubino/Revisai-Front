@@ -1,3 +1,24 @@
 import { Routes } from '@angular/router';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FlashcardComponent } from './components/decks/flashcard/flashcard.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path: "",
+        component: IndexComponent
+    },
+    {
+        path:"login",
+        component: LoginComponent
+    },
+    {
+        path:"cadastro",
+        component: CadastroComponent
+    },
+    {
+        path:"flashcard/:id",
+        component:FlashcardComponent
+    }
+];
