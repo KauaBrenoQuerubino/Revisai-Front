@@ -3,16 +3,17 @@ import { Component, inject } from '@angular/core';
 import { AuthService } from '../../service/auth/auth.service';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../Model/Usuario/Usuario.model';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss'
 })
 export class CadastroComponent {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: Router) {}
 
   #AuthService = inject(AuthService);
 
@@ -30,7 +31,7 @@ export class CadastroComponent {
     if(this.passwordConfirm != this.usuario.senha) return
 
     this.#AuthService.cadastro(this.usuario).subscribe({
-      next: res => console.log(res),
+      next: res => this.route.navigate(['/login']),
       error: err => console.log(err)
     })
   }

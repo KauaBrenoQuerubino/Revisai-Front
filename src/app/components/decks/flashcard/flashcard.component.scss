@@ -1,12 +1,25 @@
 .flashcard-container {
   text-align: center;
   padding: 20px;
-  perspective: 1200px; /* essencial para ver o 3D */
+  perspective: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+
+  background: 
+    url("/imgs/backgroundElipse.png") no-repeat center center,
+    linear-gradient(180deg, var(--secundary) 0%, var(--primary) 150%) !important;
+    background-size: cover, cover; /* imagem e gradiente cobrem toda a tela */
+    background-attachment: fixed;  /* opcional: fixa o fundo durante a rolagem */
+    margin: 0;
+  height: 100vh;
+  /* essencial para ver o 3D */
 
   .card-wrapper {
     display: inline-block;
-    width: 340px;
-    height: 220px;
+    width: 290px;
+    height: 450px;
     cursor: pointer;
     outline: none;
   }
@@ -41,13 +54,17 @@
   }
 
   .card-front {
-    background: linear-gradient(135deg, #007bff 0%, #4a90e2 100%);
-    color: #fff;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
   }
-
+ 
   .card-back {
-    background: #fff;
-    color: #333;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secundary) 180%) !important;
+    color: var(--white);
     transform: rotateY(180deg); /* mostra o verso quando o pai girar */
   }
 

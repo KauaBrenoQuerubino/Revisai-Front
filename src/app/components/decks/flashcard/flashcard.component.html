@@ -1,12 +1,13 @@
 @if (flashcards.length > 0) {
   <section class="flashcard-container">
-    <h2>Flashcard {{ currentIndex + 1 }} de {{ flashcards.length }}</h2>
-
+    
     <!-- perspectiva está no container -->
     <div class="card-wrapper"  tabindex="0" role="button" [attr.aria-pressed]="showAnswer">
       <div class="card" [class.flipped]="showAnswer">
         <div class="card-face card-front">
+          <h2> {{ currentIndex + 1 }} / {{ flashcards.length }}</h2>
           <h3>{{ flashcards[currentIndex].enunciado }}</h3>
+          <button (click)="toggleAnswer()">mostrar resposta</button>
         </div>
 
         <div class="card-face card-back">
@@ -15,7 +16,6 @@
       </div>
     </div>
 
-    <button (click)="toggleAnswer()">mostrar resposta</button>
 
     <div class="controls">
       <button (click)="previousCard(); $event.stopPropagation()">← Anterior</button>

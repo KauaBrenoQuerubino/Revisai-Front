@@ -1,4 +1,7 @@
 body {
+    height: 100vh;
     background: linear-gradient(180deg, var(--primary) 0%, var(--white) 150%) !important;
-    
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }

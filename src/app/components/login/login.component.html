@@ -5,7 +5,7 @@
             <img src="imgs/Logo.png" alt="">
         </div>
         <h1>Login</h1>
-        <p>Ainda não tem uma conta? <a href="">Cadastre-se</a></p>
+        <p>Ainda não tem uma conta? <a [routerLink]="['/cadastro']">Cadastre-se</a></p>
         <form (ngSubmit)="logar()">
             <label for="email">email: </label>
             <input type="email" [(ngModel)]="login.email" name="email">

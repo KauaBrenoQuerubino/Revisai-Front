@@ -16,14 +16,19 @@ import { Router } from '@angular/router';
 })
 export class IndexComponent {
    
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private router: Router){}
 
   #AuthService = inject(AuthService)
 
+  UserInfos :any;
   ngOnInit() {
     this.#AuthService.sessao().subscribe({
-      next: (colecao) => {
-        console.log(colecao)
+      next: (user) => {
+        console.log(user)
+        this.UserInfos = user;
+      },
+      error: () => {
+        this.router.navigate(['/login']);
       }
     })
   }

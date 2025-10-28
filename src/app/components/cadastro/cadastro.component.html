@@ -4,7 +4,7 @@
             <img src="imgs/Logo.png" alt="">
         </div>
         <h1>Cadastro</h1>
-        <p>Já tem conta? <a href="">Fazer login </a></p>
+        <p>Já tem conta? <a [routerLink]="['/login']">Fazer login </a></p>
         <form (ngSubmit)="Cadastrar()">
             <label for="nome">Nome:</label>
             <input type="text" [(ngModel)]="usuario.nome" name="nome" placeholder="Digite seu nome">
