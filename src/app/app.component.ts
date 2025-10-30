@@ -6,10 +6,11 @@ import { ColecaoComponent } from "./components/decks/colecao/colecao.component";
 import { DecksComponent } from "./components/decks/decks.component";
 import { IndexComponent } from "./components/index/index.component";
 import { FlashcardComponent } from "./components/decks/flashcard/flashcard.component";
+import { MydecksComponent } from "./components/mydecks/mydecks.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CadastroComponent, LoginComponent, ColecaoComponent, DecksComponent, IndexComponent, FlashcardComponent],
+  imports: [RouterOutlet, CadastroComponent, LoginComponent, ColecaoComponent, DecksComponent, IndexComponent, FlashcardComponent, MydecksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
