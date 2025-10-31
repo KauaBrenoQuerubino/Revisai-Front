@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContentColecaoComponent } from '../../decks/colecao/dialog-content-colecao/dialog-content-colecao.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,10 @@ import { DialogContentColecaoComponent } from '../../decks/colecao/dialog-conten
 })
 export class MenuComponent {
 
+
+  constructor(private router: Router){}
+  
+  
     readonly dialog = inject(MatDialog);
 
     openDialog() {
@@ -21,5 +26,18 @@ export class MenuComponent {
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
       });
+    }
+
+
+    Home() {
+      this.router.navigate([''])
+    }
+
+    Deck() {
+      this.router.navigate(['/meus-decks'])
+    }
+
+    config() {
+      this.router.navigate(['/config'])
     }
 }
