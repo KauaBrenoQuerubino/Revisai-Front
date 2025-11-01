@@ -1,12 +1,116 @@
-section {
-    padding: 20px;
-    .container {
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.308);
-        width: 100%;
-        min-height: 100vh ;
-    }
+ .mydecks {
+    min-height: 100vh;
+
+    background-image: url("/imgs/backgroundElipse.png");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+
+    padding: 70px 20px;
+
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+  
+    header {
+          color:  var(--white);
+          min-width: 100%;
+  
+          padding: 10px 0px;
+  
+  
+          i {
+              font-size: 40px;
+          }
+          img {
+              height: 60px;
+          }
+  
+          .container {
+              padding: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+  
+  
+  }
+  
+  
+  section {
+      
+      padding: 8px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+  
+      text-align: start;
+  
+      h1 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--white);
+          font-size: 24px;
+          font-weight: 600;
+          width: 100%;
+          padding: 50px 0;
+          
+          i {
+              padding-left: 20px;
+              font-size: 35px;
+          }
+      }
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+      }
+      .Decks {
+          padding: 20px;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.089);
+          
+      }
+  }
 }
+  
+  
+  
+  .center-btn {
+      position: fixed;
+      top: 85%;
+      left: 90%;
+      transform: translateX(-50%);
+      background-color: var(--secundary);
+      border: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 10px rgba(255, 255, 255, 0.25);
+      transition: background-color 0.3s;
+  }

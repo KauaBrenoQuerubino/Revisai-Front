@@ -1,7 +1,10 @@
 @for (item of deck; track item.id) {
   @if (deck.length == 0) {
-    <h1>Nenhum deck cadastrado</h1>
+    <h1><i class="bi bi-arrow-left" (click)="Home()"></i>Nenhum deck cadastrado</h1>
   }@else {
+
+
+    
     <section>
   
       <img src="imgs/img1.webp" alt="">
@@ -21,7 +24,7 @@
             <i class="bi bi-plus-lg"></i>
           </button>
           <button>
-            <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-pencil-square" (click)="EditarFlashcards(item.id)"></i>
           </button>
           <button class="play" (click)="irParaFlashCards(item.id)">
             <i class="bi bi-play-fill"></i>

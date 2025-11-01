@@ -6,6 +6,7 @@ import { FlashcardComponent } from './components/decks/flashcard/flashcard.compo
 import { ColecaoComponent } from './components/decks/colecao/colecao.component';
 import { MydecksComponent } from './components/mydecks/mydecks.component';
 import { ConfigComponent } from './components/config/config.component';
+import { EditDacksComponent } from './components/edit-dacks/edit-dacks.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +32,9 @@ export const routes: Routes = [
     {
         path:"config",
         component: ConfigComponent
+    },
+    {
+        path:"colecao/:id",
+        component: EditDacksComponent
     }
 ];

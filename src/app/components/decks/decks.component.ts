@@ -46,6 +46,11 @@ export class DecksComponent {
     this.router.navigate(['/flashcard', id]); // rota com parâmetro
   }
 
+
+  EditarFlashcards(id: number) {
+    this.router.navigate(['/colecao', id]); // rota com parâmetro
+  }
+
   carregarDecks(id: number) {
     this.#colecaoService.procurarUsuario(id).subscribe({
       next: (colecao) => {
@@ -73,4 +78,8 @@ export class DecksComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+    Home() {
+      this.router.navigate([''])
+    }
 }
