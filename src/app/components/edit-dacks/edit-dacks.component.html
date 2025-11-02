@@ -1,3 +1,14 @@
+<header>
+  <div class="itens">
+      <div class="logo">
+          <img src="imgs/Logo-notext.png" alt="">
+      </div>
+      <div>
+          <i class="bi bi-person-circle"></i>
+      </div>
+  </div>
+</header>
+
 
 <section class="container">
 
@@ -26,9 +37,12 @@
           />
         </div>
       }
-
-      <button type="submit">💾 Salvar Alterações</button>
+     
     </form>
+    <div class="btn">
+      <button class="Deletar" (click)="Deletar()"><i class="bi bi-trash3-fill"></i></button>
+      <button type="submit">Salvar Alterações</button>
+    </div>
   } @else {
     <p>Carregando coleção...</p>
   }

@@ -60,6 +60,17 @@ export class EditDacksComponent {
     });
   }
 
+  Deletar() {
+    this.#colecaoService.DeletarColecao(this.ColecaoID).subscribe({
+      next: () => {
+        this.router.navigate([""])
+      },
+      error: (err) => {
+        this.router.navigate([""])
+      }
+    });
+  }
+
     Home() {
       this.router.navigate([''])
     }

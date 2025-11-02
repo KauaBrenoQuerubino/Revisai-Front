@@ -36,4 +36,12 @@ export class ColecaoService {
     );
   }
 
+  DeletarColecao(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`).pipe(
+      tap((response: any) => {
+        console.log(response);
+      })
+    );
+  }
+
 }
